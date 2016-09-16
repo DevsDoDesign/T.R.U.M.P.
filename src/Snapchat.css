@@ -1,0 +1,36 @@
+.Snapchat-bg {
+	background: blue;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.snap {
+	width: 100px;
+	transform: rotate(-9deg) scale(1);
+	position: absolute;
+	top: -300px;
+
+	animation-name: snap;
+	animation-duration: 20s;
+	animation-fill-mode: forwards;
+	transition: scale 2s, opacity .5s;
+	opacity: 1;
+}
+
+.snap-caught {
+	scale: 50;
+	opacity: 0;
+	pointer-events: none;
+}
+
+@keyframes snap {
+	from {
+		top: -300px;
+	}
+	to {
+		top: 1100px;
+	}
+}
