@@ -1,8 +1,6 @@
 .InfoCard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
 }
 
 .InfoCard__title, .InfoCard__content {
@@ -10,8 +8,9 @@
 }
 
 .InfoCard__button {
-  width: 30%;
+  width: 400px;
   margin: auto;
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 200px);
 }

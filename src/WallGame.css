@@ -1,0 +1,27 @@
+.Wall__Wall {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.Wall__Rock {
+  position: absolute;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+}
+
+.Wall__Rock--animated {
+  animation: Wall__RockMove 0.8s forwards ease-in-out;
+}
+
+@keyframes Wall__RockMove {
+  to {
+    transform: scale(1.3) translate(400px, -250px);
+  }
+}
