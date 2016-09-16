@@ -22,7 +22,7 @@ class Map extends Component {
 				<Marker
 					top="410px"
 					left="100px"
-					onSelect={this.handleSelect('rally')}
+					onSelect={this.handleSelect('snapchat')}
 				/>
 			</div>
 		)
