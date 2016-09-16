@@ -9,6 +9,7 @@
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
   },
+  "homepage": "http://devsdodesign.com/T.R.U.M.P.",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
