@@ -16,6 +16,26 @@
   justify-content: center;
 }
 
+.EndTimes__hand-animation {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  animation: EndTimes__HandMove 1.2s forwards ease-in;
+}
+
+@keyframes EndTimes__HandMove {
+  to {
+    top: 120px;
+  }
+}
+
+.EndTimes__bigred {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%
+}
+
 .EndTimes__gif {
   background-image: url(../assets/nuke.gif);
   background-position: center;
