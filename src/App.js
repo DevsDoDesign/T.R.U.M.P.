@@ -1,21 +1,40 @@
-import React, { Component } from 'react'
-import logo from './logo.svg'
+import React, {Component} from 'react'
 import './App.css'
+import Snapchat from './Snapchat'
+import Map from './Map'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    )
-  }
+	state = {
+		game: null
+	}
+
+	render() {
+		return (
+			<div>
+				<div>
+					{this.renderGame()}
+				</div>
+				<div>
+					T.R.U.M.P.
+				</div>
+			</div>
+		)
+	}
+
+	renderGame() {
+		switch (this.state.game) {
+			case 'wall': return <FakeGame onFinish={this.finishGame} />
+			case 'rally': return <FakeGame onFinish={this.finishGame} />
+			case 'snapchat': return <Snapchat onFinish={this.finishGame} />
+			default: return <Map changeGame={this.changeGame} />
+		}
+	}
+
+	changeGame = game => this.setState({ game })
+
+	finishGame = () => this.setState({ game: null })
 }
+
+const FakeGame = ({ onFinish }) => <p>missing... <button onClick={onFinish}>return</button></p>
 
 export default App
