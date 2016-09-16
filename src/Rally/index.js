@@ -66,11 +66,11 @@ class Rally extends Component {
 
 export default introOutro(Rally, {
 	intro: {
-		title: `T.R.U.M.P. Rally Atteneded!`,
-		content: `Trump might not be telling the truth (shocker)! Call him on his bullshit to make everyone leave.`,
+		title: `T.R.U.M.P. Propaganda`,
+		content: `This is a regime of lies, hatred and betrayal. Educate the loyal following, this will hurt!`,
 	},
 	outro: {
 		title: `We've emptied out the venue!`,
-		content: `Nice one, Citizen! Now we've got more space for activities.`,
+		content: `Excellent work, Citizen! The citizenry have been convinced. Our country will surely return to greatness soon.`,
 	},
 })

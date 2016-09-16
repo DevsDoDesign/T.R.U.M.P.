@@ -15,6 +15,10 @@
   line-height: 1.6em;
 }
 
+.InfoCard__content {
+  padding: 0 1em;
+}
+
 .InfoCard__button {
   width: 400px;
   margin: auto;
