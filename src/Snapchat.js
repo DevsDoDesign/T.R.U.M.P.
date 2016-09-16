@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import InfoCard from './InfoCard'
 import './Snapchat.css'
 import snap from './snaps/1.png'
 
@@ -32,9 +33,11 @@ class Snapchat extends Component {
 
 	renderIntro() {
 		return (
-			<div>
-				<button onClick={() => this.setState({ stage: 1 })}>Play!</button>
-			</div>
+			<InfoCard
+				title="T.R.U.M.P. Hacked!"
+			  content="Some enterprising citizen of our great country has hacked T.R.U.M.P.'s phone! All his Naughty SnapChats™ are falling from the Cloud! Retweet them, before the NSA catches up!"
+			  onOk={() => this.setState({ stage: 1 })}
+			/>
 		)
 	}
 
@@ -57,7 +60,7 @@ class Snapchat extends Component {
 				{SNAPS.map(({ left, delay }, i) => (
 					<img
 						key={i}
-						ref={el => this.snapEls.push(el)}
+						ref={el => this.snapEls[i] = el}
 						src={snap}
 						onClick={() => this.onCatch(i)}
 						className={this.snapClass(i)}
@@ -70,9 +73,11 @@ class Snapchat extends Component {
 
 	renderOutro() {
 		return (
-			<div>
-				<button onClick={this.props.onFinish}>blahahah</button>
-			</div>
+			<InfoCard
+				title="We've Demoralized The T.R.U.M.P. Regime!"
+				content="Great work, Citizen! Our leader can't hide from the shame you've brought upon him. Soon, our country will be Great Again!™"
+				onOk={this.props.onFinish}
+			/>
 		)
 	}
 
