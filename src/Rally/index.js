@@ -13,7 +13,7 @@ class Rally extends Component {
 
 	render() {
 		return (
-			<div className="rally-bg" onClick={this.shout} style={{backgroundImage: 'url(' + rally + ')'}}>
+			<div className="rally-bg" onClick={this.shout} style={{backgroundImage: 'url(' + rally + ')', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
 				{this.state.sad &&  <img src={sad} className="rally__sad"/>}
 				<img src={attendees} className={this.state.stage >= 1 ? 'rally__attendees-1 rally__active__right': 'rally__attendees-1'}/>
 				<img src={attendees} className={this.state.stage >= 3 ? 'rally__attendees-2 rally__active__left': 'rally__attendees-2'}/>
@@ -30,7 +30,6 @@ class Rally extends Component {
 			case 0: return this.stageOne()
 			case 1: return this.stageTwo()
 			case 2: return this.stageThree()
-			default: return this.props.onFinish()
 		}
 	}
 
@@ -55,6 +54,10 @@ class Rally extends Component {
 				stage: 3,
 				sad: true
 			});
+			(new Audio('http://webhooker.dev/wall.mp3')).play();
+			setTimeout(() => {
+				this.props.onFinish()
+			}, 2200)
 		}, 6500)
 	}
 
