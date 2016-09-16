@@ -1,3 +1,22 @@
+# T.R.U.M.P.
+
+Welcome, Citizen.
+
+On November 8th 2016, Donald Trump will be elected President of the United States of America.
+
+Our experience foretells the world on the following day - November 9th, 2016.
+
+This is our hell.
+
+---
+
+Enough of the political shit, time for some dev details:
+
+* it's built only to an iPhone 6 screen size - we didn't have time for all that responsive stuff we do in our day jobs. We'll be presenting on that phone, so it's built for that phone.
+* the audio won't work because Create React App doesn't handle Audio files.. WTF. They're pointed to a local server URL, hopefully we can fix it afterwards.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.  
