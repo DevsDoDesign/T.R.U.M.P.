@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import attendees from './people-resized.png'
+import introOutro from '../introOutro'
 import rally from './trump-rally.png'
 import sad from './sad.png'
 import css from './styles.css'
@@ -63,4 +64,13 @@ class Rally extends Component {
 
 }
 
-export default Rally
+export default introOutro(Rally, {
+	intro: {
+		title: `T.R.U.M.P. Rally Atteneded!`,
+		content: `Trump might not be telling the truth (shocker)! Call him on his bullshit to make everyone leave.`,
+	},
+	outro: {
+		title: `We've emptied out the venue!`,
+		content: `Nice one, Citizen! Now we've got more space for activities.`,
+	},
+})
