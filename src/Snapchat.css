@@ -27,26 +27,24 @@
 }
 
 .snap-twitter {
-	transition: scale .5s, opacity .5s;
+	transition: all .5s;
 	height: 70px;
 	position: absolute;
 	top: 15px;
 	left: 0;
 	opacity: 0;
-	scale: 50;
-	/*opacity: 1;*/
-	/*scale: 1;*/
+	transform: scale(50);
 	pointer-events: none;
 }
 
 .snap-caught .snap-img {
-	scale: 0;
+	transform: scale(0);
 	opacity: 0;
 	pointer-events: none;
 }
 
 .snap-caught .snap-twitter {
-	scale: 0;
+	transform: scale(0);
 	opacity: 1;
 	pointer-events: none;
 }
