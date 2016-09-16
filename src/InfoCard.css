@@ -1,10 +1,18 @@
 .InfoCard {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to bottom, #383838, #000);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .InfoCard__title, .InfoCard__content {
   text-align: center;
+  line-height: 1.6em;
 }
 
 .InfoCard__button {
@@ -13,4 +21,7 @@
   position: absolute;
   bottom: 40px;
   left: calc(50% - 200px);
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
 }

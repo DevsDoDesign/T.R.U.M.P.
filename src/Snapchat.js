@@ -3,6 +3,7 @@ import InfoCard from './InfoCard'
 import './Snapchat.css'
 import snap from './snaps/1.png'
 import twitter from './twitter-logo-from-guidelines.png'
+import bg from './sky.jpg'
 
 const SNAPS = [
 	{left: 0, delay: '0s'},
@@ -59,7 +60,7 @@ class Snapchat extends Component {
 		requestAnimationFrame(this.checkDone)
 
 		return (
-			<div className="Snapchat-bg">
+			<div className="Snapchat-bg" style={{ backgroundImage: `url(${bg})` }}>
 				{SNAPS.map(({ left, delay }, i) => (
 					<div
 						key={i}
