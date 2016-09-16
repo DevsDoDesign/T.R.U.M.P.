@@ -9,10 +9,12 @@ class App extends Component {
 	}
 
 	render() {
+		if (this.state.game) return this.renderGame()
+
 		return (
 			<div className="app">
 				<div className="map">
-					{this.renderGame()}
+					<Map changeGame={this.changeGame} />
 				</div>
 				<div className="TRUMP">
 					T.R.U.M.P.
@@ -26,7 +28,7 @@ class App extends Component {
 			case 'wall': return <FakeGame onFinish={this.finishGame} />
 			case 'rally': return <FakeGame onFinish={this.finishGame} />
 			case 'snapchat': return <Snapchat onFinish={this.finishGame} />
-			default: return <Map changeGame={this.changeGame} />
+			default: return <p>missing...</p>
 		}
 	}
 
