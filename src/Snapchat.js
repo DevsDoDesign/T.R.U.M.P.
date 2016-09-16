@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import InfoCard from './InfoCard'
 import './Snapchat.css'
 import snap from './snaps/1.png'
+import twitter from './twitter-logo-from-guidelines.png'
 
 const SNAPS = [
 	{left: 0, delay: '0s'},
@@ -18,7 +19,9 @@ class Snapchat extends Component {
 
 	state = {
 		stage: 0,
+		// stage: 1,
 		caught: [],
+		throwing: false,
 	}
 
 	snapEls = []
@@ -36,7 +39,7 @@ class Snapchat extends Component {
 			<InfoCard
 				title="T.R.U.M.P. Hacked!"
 			  content="Some enterprising citizen of our great country has hacked T.R.U.M.P.'s phone! All his Naughty SnapChats™ are falling from the Cloud! Retweet them, before the NSA catches up!"
-			  onOk={() => this.setState({ stage: 1 })}
+			  onContinue={() => this.setState({ stage: 1 })}
 			/>
 		)
 	}
@@ -58,14 +61,16 @@ class Snapchat extends Component {
 		return (
 			<div className="Snapchat-bg">
 				{SNAPS.map(({ left, delay }, i) => (
-					<img
+					<div
 						key={i}
 						ref={el => this.snapEls[i] = el}
-						src={snap}
-						onClick={() => this.onCatch(i)}
 						className={this.snapClass(i)}
-					  style={{ left, animationDelay: delay }}
-				  />
+						style={{ left, animationDelay: delay }}
+						onClick={() => this.onCatch(i)}
+					>
+						<img src={snap} className="snap-img" />
+						<img src={twitter} className="snap-twitter" />
+					</div>
 				))}
 			</div>
 		)
@@ -76,7 +81,7 @@ class Snapchat extends Component {
 			<InfoCard
 				title="We've Demoralized The T.R.U.M.P. Regime!"
 				content="Great work, Citizen! Our leader can't hide from the shame you've brought upon him. Soon, our country will be Great Again!™"
-				onOk={this.props.onFinish}
+				onContinue={this.props.onFinish}
 			/>
 		)
 	}
@@ -86,7 +91,14 @@ class Snapchat extends Component {
 	}
 
 	onCatch = i => {
-		this.setState({ caught: [...this.state.caught, i] })
+		const img = this.snapEls[i]
+
+		this.setState({
+			caught: [...this.state.caught, i],
+			throwing: { top: img.offsetTop, left: img.offsetLeft },
+		})
+
+		setTimeout(() => this.setState({ throwing: false }), 800)
 	}
 
 }
