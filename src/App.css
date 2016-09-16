@@ -19,6 +19,29 @@
 	font-size: 2em;
 }
 
+
+.Map__Marker {
+  animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  top: 160px;
+  left: 190px;
+  text-indent: -9999px;
+  background-color: #00ff0f;
+  border: none;
+  border-radius: 100px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+  }
+}
+
+
+
 /*.App {*/
   /*text-align: center;*/
 /*}*/
