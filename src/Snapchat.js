@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import InfoCard from './InfoCard'
+import introOutro from './introOutro'
 import './Snapchat.css'
 import snap from './snaps/1.png'
 import twitter from './twitter-logo-from-guidelines.png'
@@ -19,8 +19,6 @@ const SNAPS = [
 class Snapchat extends Component {
 
 	state = {
-		stage: 0,
-		// stage: 1,
 		caught: [],
 		throwing: false,
 	}
@@ -28,35 +26,6 @@ class Snapchat extends Component {
 	snapEls = []
 
 	render() {
-		switch (this.state.stage) {
-			case 0: return this.renderIntro()
-			case 1: return this.renderGame()
-			case 2: return this.renderOutro()
-		}
-	}
-
-	renderIntro() {
-		return (
-			<InfoCard
-				title="T.R.U.M.P. Hacked!"
-			  content="Some enterprising citizen of our great country has hacked T.R.U.M.P.'s phone! All his Naughty SnapChats™ are falling from the Cloud! Retweet them, before the NSA catches up!"
-			  onContinue={() => this.setState({ stage: 1 })}
-			/>
-		)
-	}
-
-	checkDone = () => {
-		// re-queue if any not offscreen yet
-		for (let img of this.snapEls) {
-			if (img.offsetTop < img.parentElement.offsetHeight) {
-				return requestAnimationFrame(this.checkDone)
-			}
-		}
-
-		setTimeout(() => this.setState({ stage: 2 }), 1500)
-	}
-
-	renderGame() {
 		requestAnimationFrame(this.checkDone)
 
 		return (
@@ -77,14 +46,15 @@ class Snapchat extends Component {
 		)
 	}
 
-	renderOutro() {
-		return (
-			<InfoCard
-				title="We've Demoralized The T.R.U.M.P. Regime!"
-				content="Great work, Citizen! Our leader can't hide from the shame you've brought upon him. Soon, our country will be Great Again!™"
-				onContinue={this.props.onFinish}
-			/>
-		)
+	checkDone = () => {
+		// re-queue if any not offscreen yet
+		for (let img of this.snapEls) {
+			if (img.offsetTop < img.parentElement.offsetHeight) {
+				return requestAnimationFrame(this.checkDone)
+			}
+		}
+
+		setTimeout(this.props.onFinish, 1500)
 	}
 
 	snapClass = i => {
@@ -101,7 +71,15 @@ class Snapchat extends Component {
 
 		setTimeout(() => this.setState({ throwing: false }), 800)
 	}
-
 }
 
-export default Snapchat
+export default introOutro(Snapchat, {
+	intro: {
+		title: `T.R.U.M.P. Hacked!`,
+		content: `Some enterprising citizen of our great country has hacked T.R.U.M.P.'s phone! All his Naughty SnapChats™ are falling from the Cloud! Retweet them, before the NSA catches up!`,
+	},
+	outro: {
+		title: `We've Demoralized The T.R.U.M.P. Regime!`,
+		content: `Great work, Citizen! Our leader can't hide from the shame you've brought upon him. Soon, our country will be Great Again!™`,
+	},
+})
