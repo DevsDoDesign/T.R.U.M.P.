@@ -16,10 +16,35 @@ const SNAPS = [
 class Snapchat extends Component {
 
 	state = {
-		caught: []
+		stage: 0,
+		caught: [],
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.gameEnder)
 	}
 
 	render() {
+		switch (this.state.stage) {
+			case 0: return this.renderIntro()
+			case 1: return this.renderGame()
+			case 2: return this.renderOutro()
+		}
+	}
+
+	renderIntro() {
+		return (
+			<div>
+				<button onClick={() => this.setState({ stage: 1 })}>Play!</button>
+			</div>
+		)
+	}
+
+	renderGame() {
+		setTimeout(() => {
+			this.gameEnder = this.setState({ stage: 2 })
+		}, 14000)
+
 		return (
 			<div className="Snapchat-bg">
 				{SNAPS.map(({ left, delay }, i) => (
@@ -34,6 +59,14 @@ class Snapchat extends Component {
 					  }}
 				  />
 				))}
+			</div>
+		)
+	}
+
+	renderOutro() {
+		return (
+			<div>
+				<button onClick={this.props.onFinish}>blahahah</button>
 			</div>
 		)
 	}
