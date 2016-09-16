@@ -9,33 +9,33 @@
 
 .rally__attendees-1 {
 	position: fixed;
-	left: 0;
-	bottom: 150px;
+	left: -25px;
+	bottom: 220px;
 }
 .rally__attendees-2 {
 	position: fixed;
-	left: 172px;
-	bottom: 150px;
+	left: 147px;
+	bottom: 180px;
 }
 .rally__attendees-3 {
 	position: fixed;
-	left: 0;
-	bottom: 100px;
+	left: -25px;
+	bottom: 130px;
 }
 .rally__attendees-4 {
 	position: fixed;
-	left: 172px;
-	bottom: 100px;
+	left: 147px;
+	bottom: 80px;
 }
 .rally__attendees-5 {
 	position: fixed;
-	left: 0;
-	bottom: 0;
+	left: -25px;
+	bottom: 20px;
 }
 .rally__attendees-6 {
 	position: fixed;
-	left: 172px;
-	bottom: 0;
+	left: 147px;
+	bottom: -10px;
 }
 
 .rally__active__right {
@@ -73,4 +73,11 @@
 	padding: 5px 32px;
 	border-radius: 3px;
 	left: 130px;
+}
+
+.rally__sad {
+	position: fixed;
+	top: 20px;
+	left: 102px;
+	width: 100px;
 }
