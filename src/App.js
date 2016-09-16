@@ -10,11 +10,11 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<div>
+			<div className="app">
+				<div className="map">
 					{this.renderGame()}
 				</div>
-				<div>
+				<div className="TRUMP">
 					T.R.U.M.P.
 				</div>
 			</div>
