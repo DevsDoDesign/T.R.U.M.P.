@@ -3,12 +3,15 @@ import './App.css'
 import Snapchat from './Snapchat'
 import Rally from './Rally'
 import WallGame from './WallGame'
+import EndTimes from './EndTimes'
 import Map from './Map'
 
 class App extends Component {
 	state = {
-		game: null
+		game: 'endtimes',
+		pastGames: new Set()
 	}
+
 
 	render() {
 		if (this.state.game) return this.renderGame()
@@ -30,13 +33,26 @@ class App extends Component {
 			case 'rally': return <Rally onFinish={this.finishGame} />
 			case 'wall': return <WallGame onFinish={this.finishGame} />
 			case 'snapchat': return <Snapchat onFinish={this.finishGame} />
+			case 'endtimes': return <EndTimes />
 			default: return <p>missing...</p>
 		}
 	}
 
-	changeGame = game => this.setState({ game })
+	changeGame = (game) => {
+		this.setState({
+			game,
+			pastGames: this.state.pastGames.add(game)
+		})
+	}
 
-	finishGame = () => this.setState({ game: null })
+	finishGame = () => {
+		if (this.state.pastGames.size === 3) {
+			this.setState({ game: 'endtimes' })
+		}
+		else {
+			this.setState({ game: null })
+		}
+	}
 }
 
 const FakeGame = ({ onFinish }) => <p>missing... <button onClick={onFinish}>return</button></p>
