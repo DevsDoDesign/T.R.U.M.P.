@@ -7,7 +7,7 @@ import Map from './Map'
 
 class App extends Component {
 	state = {
-		game: 'wall'
+		game: null
 	}
 
 	render() {
