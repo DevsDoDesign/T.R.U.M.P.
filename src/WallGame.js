@@ -45,7 +45,7 @@ class WallGame extends Component {
 			<InfoCard
 				title="T.R.U.M.P's built a wall! And Mexico paid!"
 				content="Throw rocks at the wall to make the border great again™"
-				onOk={this.showGame}
+				onContinue={this.showGame}
 			/>
 		)
 	}
@@ -78,7 +78,7 @@ class WallGame extends Component {
 			<InfoCard
 				title="You've brought down the wall!"
 				content="Well done! You've let thousands of Mexicans into the US!"
-				onOk={this.props.onFinish}
+				onContinue={this.props.onFinish}
 			/>
 		)
 	}
