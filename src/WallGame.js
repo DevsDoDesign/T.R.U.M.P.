@@ -4,6 +4,7 @@ import image1 from '../assets/wall/1.jpg'
 import image2 from '../assets/wall/2.jpg'
 import rock from '../assets/the-rock.png'
 import './WallGame.css'
+import introOutro from './introOutro'
 
 const NO_OF_THROWS = 6
 
@@ -11,17 +12,11 @@ class WallGame extends Component {
 	state = {
 		image: 1,
 		isAnimating: false,
-		showIntro: true,
-		showOutro: false
-	}
-
-	showGame = () => {
-		this.setState({ showIntro: false })
 	}
 
 	showNextWall = () => {
 		if (this.state.image === NO_OF_THROWS) {
-			this.setState({ showOutro: true })
+			this.props.onFinish()
 		}
 		else {
 			this.throwRock()
@@ -40,17 +35,7 @@ class WallGame extends Component {
 		}, 800)
 	}
 
-	renderIntro = () => {
-		return (
-			<InfoCard
-				title="T.R.U.M.P's built a wall! And Mexico paid!"
-				content="Throw rocks at the wall to make the border great again™"
-				onContinue={this.showGame}
-			/>
-		)
-	}
-
-	renderGame () {
+	render() {
 		const wall1Style = {
 			backgroundImage: `url(${image1})`,
 			opacity: this.state.image === 1 ? 1 : 0
@@ -72,28 +57,15 @@ class WallGame extends Component {
 			</div>
 		)
 	}
-
-	renderOutro() {
-		return (
-			<InfoCard
-				title="You've brought down the wall!"
-				content="Well done! You've let thousands of Mexicans into the US!"
-				onContinue={this.props.onFinish}
-			/>
-		)
-	}
-
-	render() {
-		if (this.state.showIntro) {
-			return this.renderIntro()
-		}
-		else if (this.state.showOutro) {
-			return this.renderOutro()
-		}
-		else {
-			return this.renderGame()
-		}
-	}
 }
 
-export default WallGame
+export default introOutro(WallGame, {
+	intro: {
+		title: `T.R.U.M.P's built a wall! And Mexico paid!`,
+		content: `Throw rocks at the wall to make the border great again™`,
+	},
+	outro: {
+		title: `You've brought down the wall!`,
+		content: `Well done! You've let thousands of Mexicans into the US!`,
+	},
+})
