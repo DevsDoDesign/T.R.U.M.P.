@@ -8,7 +8,7 @@ import Map from './Map'
 
 class App extends Component {
 	state = {
-		game: 'endtimes',
+		game: null,
 		pastGames: new Set()
 	}
 
