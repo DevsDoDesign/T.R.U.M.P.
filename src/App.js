@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './App.css'
 import Snapchat from './Snapchat'
 import Rally from './Rally'
+import WallGame from './WallGame'
 import Map from './Map'
 
 class App extends Component {
@@ -26,8 +27,8 @@ class App extends Component {
 
 	renderGame() {
 		switch (this.state.game) {
-			case 'wall': return <FakeGame onFinish={this.finishGame} />
 			case 'rally': return <Rally onFinish={this.finishGame} />
+			case 'wall': return <WallGame onFinish={this.finishGame} />
 			case 'snapchat': return <Snapchat onFinish={this.finishGame} />
 			default: return <p>missing...</p>
 		}
