@@ -27,12 +27,11 @@ class WallGame extends Component {
 
 				this.setState({
 					isAnimating: false,
-					canYouSmellWhatTheRockIsCooking: this.state.image % NO_OF_THROWS === 0
+					canYouSmellWhatTheRockIsCooking: this.state.image % NO_OF_THROWS === 0,
 				})
 			}, 300)
 		}, 800)
 	}
-
 
 	render() {
 		const wall1Style = {
@@ -60,11 +59,11 @@ class WallGame extends Component {
 
 export default introOutro(WallGame, {
 	intro: {
-		title: "T.R.U.M.P's built a wall! And Mexico paid!",
-		content: 'Throw rocks at the wall to make the border great again™'
+		title: `T.R.U.M.P's built a wall! And Mexico paid!`,
+		content: `Throw rocks at the wall to make the border great again™`
 	},
 	outro: {
-		title: 'You\'ve brought down the wall!',
-		content: 'Well done! You\'ve let thousands of Mexicans into the US!'
+		title: `You've brought down the wall!`,
+		content: `Well done! You've let thousands of Mexicans into the US!`
 	}
 })
