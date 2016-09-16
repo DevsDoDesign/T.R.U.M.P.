@@ -36,7 +36,7 @@ class WallGame extends Component {
 
 			setTimeout(() => {
 				this.setState({ isAnimating: false })
-			}, 1000)
+			}, 300)
 		}, 800)
 	}
 
