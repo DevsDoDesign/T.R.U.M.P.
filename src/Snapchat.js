@@ -1,19 +1,28 @@
 import React, { Component } from 'react'
 import introOutro from './introOutro'
 import './Snapchat.css'
-import snap from './snaps/1.png'
+import snap1 from './snaps/1.png'
+import snapBalls from './snaps/balls.jpg'
+import snapMario from './snaps/mario.jpg'
+import snapPubHack from './snaps/pubhack.png'
 import twitter from './twitter-logo-from-guidelines.png'
 import bg from './sky.jpg'
 
 const SNAPS = [
-	{left: 0, delay: '0s'},
-	{left: 200, delay: '.5s'},
-	{left: 140, delay: '1s'},
-	{left: 40, delay: '2s'},
-	{left: 60, delay: '2.5s'},
-	{left: 200, delay: '3s'},
-	{left: 0, delay: '3.5s'},
-	{left: 100, delay: '4.5s'},
+	{left: 0, delay: '0s', src: snap1},
+	{left: 200, delay: '.5s', src: snapBalls},
+	{left: 140, delay: '1s', src: snap1},
+	{left: 40, delay: '2s', src: snapMario},
+	{left: 60, delay: '2.5s', src: snapBalls},
+	{left: 200, delay: '3s', src: snapPubHack},
+	{left: 0, delay: '3.5s', src: snapMario},
+	{left: 100, delay: '5s', src: snapPubHack},
+	{left: 60, delay: '5.3s', src: snapBalls},
+	{left: 290, delay: '5.4s', src: snapPubHack},
+	{left: 80, delay: '5.5s', src: snapMario},
+	{left: 0, delay: '6s', src: snapBalls},
+	{left: 200, delay: '6.5s', src: snapBalls},
+	{left: 140, delay: '6.6s', src: snapPubHack},
 ]
 
 class Snapchat extends Component {
@@ -30,7 +39,7 @@ class Snapchat extends Component {
 
 		return (
 			<div className="Snapchat-bg" style={{ backgroundImage: `url(${bg})` }}>
-				{SNAPS.map(({ left, delay }, i) => (
+				{SNAPS.map(({ left, delay, src }, i) => (
 					<div
 						key={i}
 						ref={el => this.snapEls[i] = el}
@@ -38,7 +47,7 @@ class Snapchat extends Component {
 						style={{ left, animationDelay: delay }}
 						onClick={() => this.onCatch(i)}
 					>
-						<img src={snap} className="snap-img" />
+						<img src={src} className="snap-img" />
 						<img src={twitter} className="snap-twitter" />
 					</div>
 				))}
