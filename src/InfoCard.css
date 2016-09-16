@@ -1,0 +1,17 @@
+.InfoCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.InfoCard__title, .InfoCard__content {
+  text-align: center;
+}
+
+.InfoCard__button {
+  width: 30%;
+  margin: auto;
+  position: relative;
+  bottom: 0;
+}
