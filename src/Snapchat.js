@@ -20,9 +20,7 @@ class Snapchat extends Component {
 		caught: [],
 	}
 
-	componentWillUnmount() {
-		clearTimeout(this.gameEnder)
-	}
+	snapEls = []
 
 	render() {
 		switch (this.state.stage) {
@@ -40,23 +38,30 @@ class Snapchat extends Component {
 		)
 	}
 
+	checkDone = () => {
+		// re-queue if any not offscreen yet
+		for (let img of this.snapEls) {
+			if (img.offsetTop < img.parentElement.offsetHeight) {
+				return requestAnimationFrame(this.checkDone)
+			}
+		}
+
+		setTimeout(() => this.setState({ stage: 2 }), 1500)
+	}
+
 	renderGame() {
-		setTimeout(() => {
-			this.gameEnder = this.setState({ stage: 2 })
-		}, 14000)
+		requestAnimationFrame(this.checkDone)
 
 		return (
 			<div className="Snapchat-bg">
 				{SNAPS.map(({ left, delay }, i) => (
 					<img
 						key={i}
+						ref={el => this.snapEls.push(el)}
 						src={snap}
 						onClick={() => this.onCatch(i)}
 						className={this.snapClass(i)}
-					  style={{
-					    left,
-					    animationDelay: delay,
-					  }}
+					  style={{ left, animationDelay: delay }}
 				  />
 				))}
 			</div>
