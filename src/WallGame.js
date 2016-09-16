@@ -11,10 +11,15 @@ class WallGame extends Component {
 	state = {
 		image: 1,
 		isAnimating: false,
+		showIntro: true,
 		showOutro: false
 	}
 
-	showNext = () => {
+	showGame = () => {
+		this.setState({ showIntro: false })
+	}
+
+	showNextWall = () => {
 		if (this.state.image === NO_OF_THROWS) {
 			this.setState({ showOutro: true })
 		}
@@ -35,6 +40,16 @@ class WallGame extends Component {
 		}, 800)
 	}
 
+	renderIntro = () => {
+		return (
+			<InfoCard
+				title="T.R.U.M.P's built a wall! And Mexico paid!"
+				content="Throw rocks at the wall to make the border great again™"
+				onOk={this.showGame}
+			/>
+		)
+	}
+
 	renderGame () {
 		const wall1Style = {
 			backgroundImage: `url(${image1})`,
@@ -50,7 +65,7 @@ class WallGame extends Component {
 		if (this.state.isAnimating) rockClass += 'Wall__Rock--animated'
 
 		return (
-			<div onClick={this.showNext}>
+			<div onClick={this.showNextWall}>
 				<div className="Wall__Wall" style={wall1Style}></div>
 				<div className="Wall__Wall" style={wall2Style}></div>
 				<img src={rock} className={rockClass}/>
@@ -69,7 +84,10 @@ class WallGame extends Component {
 	}
 
 	render() {
-		if (this.state.showOutro) {
+		if (this.state.showIntro) {
+			return this.renderIntro()
+		}
+		else if (this.state.showOutro) {
 			return this.renderOutro()
 		}
 		else {
