@@ -32,7 +32,7 @@ class WallGame extends Component {
 					isAnimating: false,
 					canYouSmellWhatTheRockIsCooking: this.state.image % NO_OF_THROWS === 0,
 				})
-			}, 300)
+			}, 500)
 		}, 800)
 	}
 

@@ -22,6 +22,6 @@
 
 @keyframes Wall__RockMove {
   to {
-    transform: scale(1.3) translate(400px, -250px);
+    transform: scale(1.3) translate(100px, -250px);
   }
 }
