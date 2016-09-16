@@ -1,0 +1,76 @@
+.rally-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: white;
+}
+
+.rally__attendees-1 {
+	position: fixed;
+	left: 0;
+	bottom: 150px;
+}
+.rally__attendees-2 {
+	position: fixed;
+	left: 172px;
+	bottom: 150px;
+}
+.rally__attendees-3 {
+	position: fixed;
+	left: 0;
+	bottom: 100px;
+}
+.rally__attendees-4 {
+	position: fixed;
+	left: 172px;
+	bottom: 100px;
+}
+.rally__attendees-5 {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+.rally__attendees-6 {
+	position: fixed;
+	left: 172px;
+	bottom: 0;
+}
+
+.rally__active__right {
+	animation-name: slideRight;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.rally__active__left {
+	animation-name: slideLeft;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+	to {
+		left: 500px;
+	}
+}
+
+@keyframes slideLeft {
+	to {
+		left: -500px;
+	}
+}
+
+.rally__shout {
+	position: fixed;
+	bottom: 10px;
+	font-size: 20px;
+	background: #EC644B;
+	border: 1px solid red;
+	color: white;
+	font-weight: bold;
+	padding: 5px 32px;
+	border-radius: 3px;
+	left: 130px;
+}
