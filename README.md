@@ -1,5 +1,7 @@
 # T.R.U.M.P.
 
+_A visual experience brought to you by `#DevsDoDesign`, brewed at [PubHack 5](http://pubhack.co.uk)._
+
 Welcome, Citizen.
 
 On November 8th 2016, Donald Trump will be elected President of the United States of America.
@@ -13,7 +15,8 @@ This is our hell.
 Enough of the political shit, time for some dev details:
 
 * it's built only to an iPhone 6 screen size - we didn't have time for all that responsive stuff we do in our day jobs. We'll be presenting on that phone, so it's built for that phone.
-* the audio won't work because Create React App doesn't handle Audio files.. WTF. They're pointed to a local server URL, hopefully we can fix it afterwards.
+
+If you're building locally, audio won't work as Create React App doesn't publish audio files. We've sent a PR to the project, so it should be fixed soon.
 
 ---
 
