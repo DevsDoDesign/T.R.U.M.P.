@@ -4,6 +4,10 @@ import introOutro from '../introOutro'
 import rally from './trump-rally.png'
 import sad from './sad.png'
 import css from './styles.css'
+import boo from '../../assets/audio/boo.m4a'
+import citationNeeded from '../../assets/audio/citation-needed.m4a'
+import liar from '../../assets/audio/liar.m4a'
+import wall from '../../assets/audio/wall.mp3'
 
 class Rally extends Component {
 
@@ -35,27 +39,27 @@ class Rally extends Component {
 	}
 
 	stageOne = () => {
-		(new Audio('http://webhooker.dev/citation-needed.m4a')).play();
+		(new Audio(citationNeeded)).play();
 		setTimeout(() => {
 			this.setState({ stage: 1 });
 		}, 2000)
 	}
 
 	stageTwo = () => {
-		(new Audio('http://webhooker.dev/liar.m4a')).play();
+		(new Audio(liar)).play();
 		setTimeout(() => {
 			this.setState({ stage: 2 });
 		}, 1200)
 	}
 
 	stageThree = () => {
-		(new Audio('http://webhooker.dev/boo.m4a')).play();
+		(new Audio(boo)).play();
 		setTimeout(() => {
 			this.setState({
 				stage: 3,
 				sad: true
 			});
-			(new Audio('http://webhooker.dev/wall.mp3')).play();
+			(new Audio(wall)).play();
 			setTimeout(() => {
 				this.props.onFinish()
 			}, 2200)
