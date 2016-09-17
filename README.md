@@ -20,6 +20,20 @@ If you're building locally, audio won't work as Create React App doesn't publish
 
 ---
 
+Deployment:
+
+```sh
+npm run build
+git checkout -B gh-pages
+git add -f build
+git commit -am "Rebuild website"
+git filter-branch -f --prune-empty --subdirectory-filter build
+git push -f origin gh-pages
+git checkout -
+```
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.  
