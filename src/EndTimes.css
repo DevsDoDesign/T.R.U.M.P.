@@ -3,7 +3,7 @@
   flex-direction: column;
   background: linear-gradient(to bottom, #383838, #000);
   color: #fff;
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -55,4 +55,6 @@
   font-size: 1.5em;
   color: #fff;
   text-transform: uppercase;
+  background: none;
+  border: none;
 }

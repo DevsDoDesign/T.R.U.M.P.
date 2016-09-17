@@ -3,3 +3,24 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+@media (min-width: 416px) {
+	body {
+		background: #dedede;
+  }
+
+	#root {
+		max-width: 375px;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 40px auto 0;
+		max-height: 667px;
+		border: 2px solid black;
+		box-shadow: 0 0 30px 10px #00000063;
+		background: white;
+		overflow: hidden;
+	}
+}

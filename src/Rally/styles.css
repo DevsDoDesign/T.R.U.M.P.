@@ -1,5 +1,5 @@
 .rally-bg {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -8,32 +8,32 @@
 }
 
 .rally__attendees-1 {
-	position: fixed;
+	position: absolute;
 	left: -25px;
 	bottom: 220px;
 }
 .rally__attendees-2 {
-	position: fixed;
+	position: absolute;
 	left: 147px;
 	bottom: 180px;
 }
 .rally__attendees-3 {
-	position: fixed;
+	position: absolute;
 	left: -25px;
 	bottom: 130px;
 }
 .rally__attendees-4 {
-	position: fixed;
+	position: absolute;
 	left: 147px;
 	bottom: 80px;
 }
 .rally__attendees-5 {
-	position: fixed;
+	position: absolute;
 	left: -25px;
 	bottom: 20px;
 }
 .rally__attendees-6 {
-	position: fixed;
+	position: absolute;
 	left: 147px;
 	bottom: -10px;
 }
@@ -63,7 +63,7 @@
 }
 
 .rally__shout {
-	position: fixed;
+	position: absolute;
 	bottom: 10px;
 	font-size: 20px;
 	background: #EC644B;
@@ -76,7 +76,7 @@
 }
 
 .rally__sad {
-	position: fixed;
+	position: absolute;
 	top: -6px;
 	left: 128px;
 	width: 120px;
