@@ -1,0 +1,50 @@
+.Intro {
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(-25deg, #EE3043, #EE30A9);
+	color: #fff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.Intro a {
+	color: orange;
+	text-decoration: none;
+}
+
+.Intro__title, .Intro__content {
+	text-align: center;
+	line-height: 1.6em;
+}
+
+.Intro__content {
+	padding: 0 1em;
+}
+
+.Intro__buttons {
+	width: 400px;
+	margin: auto;
+	position: absolute;
+	bottom: 40px;
+	left: calc(50% - 200px);
+}
+
+.Intro__button {
+	display: block;
+	text-align: center;
+	width: 100%;
+	text-decoration: none;
+	font-size: 1.5em;
+	color: #fff;
+	text-transform: uppercase;
+	background: none;
+	border: none;
+}
+
+a.Intro__button {
+	margin-bottom: 1em;
+	color: #fff;
+}
